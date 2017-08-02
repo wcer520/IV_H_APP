@@ -85,6 +85,7 @@ namespace I_I_VOLT
                             if (canReciveNum >= 200)
                             {
                                 canReciveNum = 0;
+
                                 try
                                 {
                                     listBox1.Items.Clear();
@@ -558,8 +559,8 @@ namespace I_I_VOLT
             UInt32 Status;
             ControlCAN.VCI_CAN_OBJ[] CAN_SendData = new ControlCAN.VCI_CAN_OBJ[1];
 
-            UInt16 rate = 0;
-            rate = Convert.ToUInt16(comboBox1.Text);
+            UInt32 rate = 0;
+            rate = ((UInt32)Convert.ToUInt16(comboBox1.Text) + 1) * 250;
             if ((rate <= 1000)&&(rate >= 250))
             {
                 CAN_SendData[0].DataLen = 8;
