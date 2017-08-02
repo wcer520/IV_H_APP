@@ -1,0 +1,25 @@
+I:\Projects\Volt Electronics (Suzhou)\Volt-DLDY\I-I Tool\I-I_VOLT\I-I_VOLT\bin\Debug\I-I_VOLT.exe.config
+I:\Projects\Volt Electronics (Suzhou)\Volt-DLDY\I-I Tool\I-I_VOLT\I-I_VOLT\obj\Debug\I-I_VOLT.csprojResolveAssemblyReference.cache
+I:\Projects\Volt Electronics (Suzhou)\Volt-DLDY\I-I Tool\I-I_VOLT\I-I_VOLT\obj\Debug\I_I_VOLT.Properties.Resources.resources
+I:\Projects\Volt Electronics (Suzhou)\Volt-DLDY\I-I Tool\I-I_VOLT\I-I_VOLT\obj\Debug\I-I_VOLT.csproj.GenerateResource.Cache
+I:\Projects\Volt Electronics (Suzhou)\Volt-DLDY\I-I Tool\I-I_VOLT\I-I_VOLT\obj\Debug\I_I_VOLT.MAIN.resources
+I:\Projects\Volt Electronics (Suzhou)\Volt-DLDY\I-I Tool\I-I_VOLT\I-I_VOLT\bin\Debug\I-I_VOLT.exe
+I:\Projects\Volt Electronics (Suzhou)\Volt-DLDY\I-I Tool\I-I_VOLT\I-I_VOLT\bin\Debug\I-I_VOLT.pdb
+I:\Projects\Volt Electronics (Suzhou)\Volt-DLDY\I-I Tool\I-I_VOLT\I-I_VOLT\obj\Debug\I-I_VOLT.exe
+I:\Projects\Volt Electronics (Suzhou)\Volt-DLDY\I-I Tool\I-I_VOLT\I-I_VOLT\obj\Debug\I-I_VOLT.pdb
+D:\I-I_VOLT\I-I_VOLT\bin\Debug\I-I_VOLT.exe.config
+D:\I-I_VOLT\I-I_VOLT\bin\Debug\I-I_VOLT.exe
+D:\I-I_VOLT\I-I_VOLT\bin\Debug\I-I_VOLT.pdb
+D:\I-I_VOLT\I-I_VOLT\obj\Debug\I_I_VOLT.MAIN.resources
+D:\I-I_VOLT\I-I_VOLT\obj\Debug\I_I_VOLT.Properties.Resources.resources
+D:\I-I_VOLT\I-I_VOLT\obj\Debug\I-I_VOLT.csproj.GenerateResource.Cache
+D:\I-I_VOLT\I-I_VOLT\obj\Debug\I-I_VOLT.exe
+D:\I-I_VOLT\I-I_VOLT\obj\Debug\I-I_VOLT.pdb
+D:\I-I_VOLTk\I-I_VOLT\bin\Debug\I-I_VOLT.exe.config
+D:\I-I_VOLTk\I-I_VOLT\bin\Debug\I-I_VOLT.exe
+D:\I-I_VOLTk\I-I_VOLT\bin\Debug\I-I_VOLT.pdb
+D:\I-I_VOLTk\I-I_VOLT\obj\Debug\I_I_VOLT.MAIN.resources
+D:\I-I_VOLTk\I-I_VOLT\obj\Debug\I_I_VOLT.Properties.Resources.resources
+D:\I-I_VOLTk\I-I_VOLT\obj\Debug\I-I_VOLT.csproj.GenerateResource.Cache
+D:\I-I_VOLTk\I-I_VOLT\obj\Debug\I-I_VOLT.exe
+D:\I-I_VOLTk\I-I_VOLT\obj\Debug\I-I_VOLT.pdb
