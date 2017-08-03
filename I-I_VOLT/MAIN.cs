@@ -226,6 +226,7 @@ namespace I_I_VOLT
         private void button1_Click(object sender, EventArgs e)
         {
             ControlCAN.VCI_INIT_CONFIG CAN_Init = new ControlCAN.VCI_INIT_CONFIG();
+
             //Config device
             CAN_Init.AccCode = 0x00000000;
             CAN_Init.AccMask = 0xFFFFFFFF;
@@ -559,8 +560,8 @@ namespace I_I_VOLT
             UInt32 Status;
             ControlCAN.VCI_CAN_OBJ[] CAN_SendData = new ControlCAN.VCI_CAN_OBJ[1];
 
-            UInt32 rate = 0;
-            rate = ((UInt32)Convert.ToUInt16(comboBox1.Text) + 1) * 250;
+            UInt32 rate = (UInt32)Convert.ToUInt16(comboBox2.Text);
+
             if ((rate <= 1000)&&(rate >= 250))
             {
                 CAN_SendData[0].DataLen = 8;
