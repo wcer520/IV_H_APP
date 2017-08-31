@@ -23,6 +23,8 @@ namespace I_I_VOLT
         UInt16 ID = 0;
         UInt16 gNewID = 0;
 
+        public SoundPlayer p = new SoundPlayer();                 
+
         private bool b_Alarm = false;
 
         //static UInt32 m_devtype = 21;//USBCAN-2e-u
@@ -50,12 +52,13 @@ namespace I_I_VOLT
             comboBox1.SelectedIndex = 1;
             comboBox2.SelectedIndex = 0;
             comboBox3.SelectedIndex = 0;
+
+            p.Stream = Resource1._1634;
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
             System.Windows.Forms.Control.CheckForIllegalCrossThreadCalls = false;
-           
         }
 
         public void recive()
@@ -274,6 +277,7 @@ namespace I_I_VOLT
                         ControlCAN.VCI_StartCAN(3, 0, 0);
                         button1.Text = "关闭USBCAN-I设备";
 
+                        // 新线程
                         nonParameterThread = new Thread(new ThreadStart(recive));
                         nonParameterThread.IsBackground = true;
                         nonParameterThread.Start();
@@ -286,7 +290,12 @@ namespace I_I_VOLT
                         button8.Enabled = true;
                         button9.Enabled = true;
 
-                        timer1.Enabled = true;   // 打开定时器开始计时接收
+                        timer1.Enabled = true;   // 打开定时器开始计时接收报警功能
+                        //b_Alarm = false;
+                        //SoundPlayer p = new SoundPlayer();
+                        //p.Stream = Resource1._1634;
+                        p.Stop();
+                        //p.Dispose();
                     }
 
                 }
@@ -313,7 +322,12 @@ namespace I_I_VOLT
                     MessageBox.Show("线程关闭失败!", "警告", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
 
-                timer1.Enabled = false;   // 关闭定时器开始计时接收
+
+                timer1.Enabled = false;   // 关闭定时器
+                //SoundPlayer p = new SoundPlayer();
+                //p.Stream = Resource1._1634;
+                p.Stop();
+                //p.Dispose();
             }
         }
 
@@ -325,6 +339,8 @@ namespace I_I_VOLT
                 button1.Text = "打开USBCAN-I设备";
                 nonParameterThread.Abort();
             }
+
+            p.Dispose();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -646,11 +662,12 @@ namespace I_I_VOLT
         {
             if (b_Alarm == false)
             {
-                SoundPlayer p = new SoundPlayer();
-                p.Stream = Resource1._1634;
+                //SoundPlayer p = new SoundPlayer();
+                //p.Stream = Resource1._1634;
                 p.Play();
                 b_Alarm = true;
                 timer1.Enabled = false;
+                //p.Dispose();
             }
 
             b_Alarm = false;
