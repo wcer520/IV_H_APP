@@ -92,6 +92,7 @@
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox5.SuspendLayout();
@@ -848,6 +849,12 @@
             this.label10.TabIndex = 4;
             this.label10.Text = "波特率：";
             // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 3000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // MAIN
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -952,6 +959,7 @@
         private System.Windows.Forms.TextBox voltage2;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.TextBox voltage1;
+        private System.Windows.Forms.Timer timer1;
     }
 }
 

@@ -12,6 +12,7 @@ using System.IO;
 using System.IO.Ports;
 
 using USBCANI;
+using System.Media;
 
 
 namespace I_I_VOLT
@@ -21,6 +22,8 @@ namespace I_I_VOLT
         static UInt32 m_devtype = 3,canReciveNum=0;//USBCAN1
         UInt16 ID = 0;
         UInt16 gNewID = 0;
+
+        private bool b_Alarm = false;
 
         //static UInt32 m_devtype = 21;//USBCAN-2e-u
         //usb-e-u 波特率
@@ -74,6 +77,7 @@ namespace I_I_VOLT
                         if (canReciveNum % 10 == 1)
                         {
                             label1.BackColor = Color.Red;
+                            b_Alarm = true;     // 收到10帧数据确认关闭报警
                         }
                         else if (canReciveNum % 5 == 1)
                         {
@@ -110,6 +114,7 @@ namespace I_I_VOLT
                             listBox1.Items.Add("ID：0x" + CAN_ReceiveData[i].ID.ToString("X4") + remoteFlag + exFlag + " 数据长度" + CAN_ReceiveData[i].DataLen.ToString() + " 数据: " + dataRecive);
                             this.listBox1.SelectedIndex = this.listBox1.Items.Count-1;
                         }
+
                         if (CAN_ReceiveData[i].ID == (0x500 | ID * 16))
                         {
                             int curent = 0, voltage = 0;
@@ -280,6 +285,8 @@ namespace I_I_VOLT
                         button7.Enabled = true;
                         button8.Enabled = true;
                         button9.Enabled = true;
+
+                        timer1.Enabled = true;   // 打开定时器开始计时接收
                     }
 
                 }
@@ -305,6 +312,8 @@ namespace I_I_VOLT
                 {
                     MessageBox.Show("线程关闭失败!", "警告", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
+
+                timer1.Enabled = false;   // 关闭定时器开始计时接收
             }
         }
 
@@ -631,6 +640,20 @@ namespace I_I_VOLT
             {
                 MessageBox.Show("SN范围0~4294967296之间!", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            if (b_Alarm == false)
+            {
+                SoundPlayer p = new SoundPlayer();
+                p.Stream = Resource1._1634;
+                p.Play();
+                b_Alarm = true;
+                timer1.Enabled = false;
+            }
+
+            b_Alarm = false;
         }
     }
 }
